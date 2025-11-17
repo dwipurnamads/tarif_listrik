@@ -4,7 +4,19 @@ import pandas as pd
 import pickle
 
 # Load the trained model
-model = pickle.load('linear_regression_model.pkl') # Changed model filename and loading method
+# model = pickle.load('linear_regression_model.pkl') # Changed model filename and loading method
+import pickle
+
+# --- Ubah baris ini (sebelumnya: model = pickle.load('linear_regression_model.pkl')) ---
+try:
+    with open('linear_regression_model.pkl', 'rb') as file:
+        model = pickle.load(file)
+except FileNotFoundError:
+    # Ini penting jika file model tidak ditemukan
+    st.error("Error: File model 'linear_regression_model.pkl' tidak ditemukan. Pastikan file berada di direktori yang benar.")
+    model = None # Set model ke None agar aplikasi tidak crash lebih jauh
+
+# ... sisa kode aplikasi Anda
 
 # Streamlit app title
 st.title('Prediksi Tagihan Listrik Jakarta')
