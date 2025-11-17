@@ -5,7 +5,6 @@ import pickle
 
 # Load the trained model
 # model = pickle.load('linear_regression_model.pkl') # Changed model filename and loading method
-import pickle
 
 # --- Ubah baris ini (sebelumnya: model = pickle.load('linear_regression_model.pkl')) ---
 try:
